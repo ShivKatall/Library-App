@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Library.h"
 
-@interface LibraryViewController : UITableViewController
+@interface LibraryViewController : UITableViewController 
 
+@property (nonatomic, weak) Library *library;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
-@property (nonatomic) NSString *labelText;
-@property (nonatomic) NSMutableArray *shelfList;
+
 
 
 @end

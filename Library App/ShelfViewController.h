@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Shelf;
+
 @interface ShelfViewController : UITableViewController
 
-@property (nonatomic) NSString *labelText;
+@property (nonatomic, weak) Shelf *shelf;
 
 @end

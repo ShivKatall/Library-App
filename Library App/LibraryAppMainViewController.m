@@ -93,7 +93,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LibraryCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LibraryCell" forIndexPath:indexPath];
     Library *library = [self.libraryList objectAtIndex:indexPath.row];
     cell.textLabel.text = library.libraryName;
     return cell;
@@ -110,8 +110,7 @@
     if ([segue.identifier isEqualToString:@"showLibrarySegue"]) {
         LibraryViewController *destination = segue.destinationViewController;
         Library *library = [self.libraryList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        destination.labelText = library.libraryName;
-        destination.shelfList = library.shelves;
+        destination.library = library;
     }
 }
 

@@ -52,13 +52,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Library App/LibraryViewController.m"
-            timestampString = "417311412.535756"
+            timestampString = "417732251.068051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "shelfList"
-            landmarkType = "19">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "@implementation LibraryViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

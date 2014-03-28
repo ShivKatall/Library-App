@@ -17,17 +17,9 @@
 
 @end
 
-@implementation LibraryViewController
-@synthesize shelfList;
+@class Library;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation LibraryViewController
 
 - (void)viewDidLoad
 {
@@ -39,8 +31,6 @@
 {
     [super viewDidAppear:animated];
         
-    NSString *libraryName = [self.labelText];
-    NSMutableArray *shelfList = [self.shelfList];
     
 }
 
@@ -50,16 +40,17 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.shelfList count];
+    return [self.library.shelves count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShelfCell"];
-    Shelf *shelf = [self.shelfList objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShelfCell" forIndexPath:indexPath];
+    Shelf *shelf = [self.library.shelves objectAtIndex:indexPath.row];
     cell.textLabel.text = shelf.shelfName;
     return cell;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -69,10 +60,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"showLibrarySegue"]) {
+    if ([segue.identifier isEqualToString:@"showShelfSegue"]) {
         ShelfViewController *destination = segue.destinationViewController;
-        Shelf *shelf = [self.shelfList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        destination.labelText = shelf.shelfName;
+        Shelf *shelf = [self.library.shelves objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        destination.shelf = shelf;
     }
 }
 @end
