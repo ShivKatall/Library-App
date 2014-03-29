@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddBookViewController.h"
 
 @class Shelf;
 
-@interface ShelfViewController : UITableViewController
+@interface ShelfViewController : UITableViewController <AddBookViewControllerDelegate>
 
 @property (nonatomic, weak) Shelf *shelf;
 

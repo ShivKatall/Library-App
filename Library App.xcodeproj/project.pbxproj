@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D59036E18E63DEE000ADA87 /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D59036D18E63DEE000ADA87 /* AddBookViewController.m */; };
 		3D70799F18DA22E0000ED9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D70799E18DA22E0000ED9F1 /* Foundation.framework */; };
 		3D7079A118DA22E0000ED9F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7079A018DA22E0000ED9F1 /* CoreGraphics.framework */; };
 		3D7079A318DA22E0000ED9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7079A218DA22E0000ED9F1 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D59036C18E63DEE000ADA87 /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
+		3D59036D18E63DEE000ADA87 /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
 		3D70799B18DA22E0000ED9F1 /* Library App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Library App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D70799E18DA22E0000ED9F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D7079A018DA22E0000ED9F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 				3D7079D418DA276B000ED9F1 /* LibraryViewController.m */,
 				3D788A1718DFA1FC00FA32A9 /* ShelfViewController.h */,
 				3D788A1818DFA1FC00FA32A9 /* ShelfViewController.m */,
+				3D59036C18E63DEE000ADA87 /* AddBookViewController.h */,
+				3D59036D18E63DEE000ADA87 /* AddBookViewController.m */,
 				3DAE397218DA4FC9008F81D8 /* Library.h */,
 				3DAE397318DA4FC9008F81D8 /* Library.m */,
 				3DAE397418DA4FC9008F81D8 /* Shelf.h */,
@@ -283,6 +288,7 @@
 				3D7079D518DA276B000ED9F1 /* LibraryViewController.m in Sources */,
 				3DAE397818DA4FC9008F81D8 /* Shelf.m in Sources */,
 				3D7079B518DA22E0000ED9F1 /* LibraryAppMainViewController.m in Sources */,
+				3D59036E18E63DEE000ADA87 /* AddBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,24 +53,24 @@
     {
         Book *newBook = [Book new];
         newBook.titleOfBook = @"How to Brew";
-        beerShelf.books = [NSMutableArray arrayWithObject:newBook];
+        beerShelf.books = [[NSMutableArray alloc] initWithObjects:newBook, nil];
     }
     {
         Book *newBook = [Book new];
         newBook.titleOfBook = @"The Art and Craft of Coffee";
-        coffeeShelf.books = [NSMutableArray arrayWithObject:newBook];
+        coffeeShelf.books = [[NSMutableArray alloc] initWithObjects:newBook, nil];
     }
     {
         Book *newBook = [Book new];
         newBook.titleOfBook = @"NSHipster: Obscure Topics in Cocoa & Objective-C";
         Book *newBook2 = [Book new];
         newBook2.titleOfBook = @"Basher Science: Technology: A byte-sized world!";
-        techShelf.books = [NSMutableArray arrayWithObjects:newBook, newBook2, nil];
+        techShelf.books = [[NSMutableArray alloc] initWithObjects:newBook, newBook2, nil];
     }
     {
         Book *newBook = [Book new];
         newBook.titleOfBook = @"Eminent Hipsters";
-        hipsterShelf.books = [NSMutableArray arrayWithObject:newBook];
+        hipsterShelf.books = [[NSMutableArray alloc] initWithObjects:newBook, nil];
     }
 
     Library *seattleLibrary = [libraryList objectAtIndex:0];

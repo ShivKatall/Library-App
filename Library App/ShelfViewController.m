@@ -26,6 +26,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,6 +42,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)toggleEditing:(id)sender
+{
+    if (self.tableView.editing) {
+        [self.tableView setEditing:NO animated:YES];
+        [(UIBarButtonItem *)sender setTitle:@"Edit"];
+    } else {
+        [self.tableView setEditing:YES animated:YES];
+        [(UIBarButtonItem *)sender setTitle:@"Done"];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Book *bookToDelete = [self.shelf.books objectAtIndex:indexPath.row];
+    [self.shelf removeBook:bookToDelete];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 #pragma mark - Table view data source
@@ -116,4 +135,44 @@
 }
 */
 
+-(void)addBookViewControllerDidCancel:(AddBookViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)AddBookViewController:(AddBookViewController *)controller didFinishAddingItem:(Book *)book
+{
+    NSInteger newRowIndex = [self.shelf.books count];
+    [self.shelf addBook:book];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*
+ - (IBAction)addBook:(id)sender
+ {
+ Book *newBook = [Book new];
+ newBook.titleOfBook = @"Book Title";
+ [self.shelf addBook:newBook];
+ [self.tableView reloadData];
+ }
+ */
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AddBook"]) {
+        
+        // 1
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        // 2
+        AddBookViewController *controller = (AddBookViewController *) navigationController.topViewController;
+        
+        // 3
+        controller.delegate = self;
+    }
+}
 @end
